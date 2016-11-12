@@ -1,9 +1,9 @@
-var chrome = require('selenium-webdriver/chrome');
-var chromeDriverPath = require('chromedriver').path;
-chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriverPath).build());
+var webdriver = require('selenium-webdriver');
 
 function CustomWorld() {
-  this.driver = new chrome.Driver();
+  this.driver = new webdriver.Builder()
+    .forBrowser('chrome')
+    .build();
 }
 
 module.exports = function() {
